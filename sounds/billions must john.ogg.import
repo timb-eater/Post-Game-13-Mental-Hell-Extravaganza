@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dolohios7uum4"
+path="res://.godot/imported/billions must john.ogg-e40759848658b51ed0d0e7f97b1b4518.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/billions must john.ogg"
+dest_files=["res://.godot/imported/billions must john.ogg-e40759848658b51ed0d0e7f97b1b4518.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

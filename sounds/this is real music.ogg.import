@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dhitmcnjfteij"
+path="res://.godot/imported/this is real music.ogg-1e4884c769c31f1c1a038913b41592db.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/this is real music.ogg"
+dest_files=["res://.godot/imported/this is real music.ogg-1e4884c769c31f1c1a038913b41592db.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
