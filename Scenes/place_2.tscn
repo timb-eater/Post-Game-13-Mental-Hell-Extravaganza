@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://c1euc6rnmtg3o"]
+[gd_scene load_steps=20 format=3 uid="uid://c1euc6rnmtg3o"]
 
+[ext_resource type="Script" path="res://Scenes/place_2.gd" id="1_c5g75"]
 [ext_resource type="FontFile" uid="uid://ch1twcupgh7c6" path="res://textures/NotoSerifDisplay_Condensed-Regular.ttf" id="2_v81f1"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="3_gieaa"]
 [ext_resource type="Resource" uid="uid://dkwbgtagy6sub" path="res://dialogue/dialog1.tres" id="4_p5036"]
@@ -46,6 +47,7 @@ script = ExtResource("5_8c7a2")
 script = ExtResource("6_6pv2w")
 
 [node name="place_2" type="Node3D"]
+script = ExtResource("1_c5g75")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qhmmk")

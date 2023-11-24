@@ -33,3 +33,8 @@ func _on_dialogue_box_dialogue_ended():
 	player.set_physics_process(true)
 	player.set_process_input(true)
 	player = null
+
+
+func _on_teleport_interacted(body):
+	Global.paused = false
+	get_tree().change_scene_to_file("res://Scenes/place_2.tscn")
