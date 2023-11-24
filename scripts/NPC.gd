@@ -4,11 +4,9 @@ class_name NPC
 @onready var animation_tree = $AnimationTree
 @onready var audio = $Screams
 
-@export var dialog : DialogueData
+@export var dialog_id : String
 
-signal interacted(body)
-
-var talking = false
+signal interacted(body, id)
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -26,5 +24,4 @@ func _physics_process(delta):
 	move_and_slide()
 
 func interact(body):
-	emit_signal("interacted", body)
-	
+	emit_signal("interacted", body, dialog_id)

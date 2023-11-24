@@ -5,17 +5,30 @@
 [resource]
 script = ExtResource("1_fef6i")
 starts = {
-"1": &"0_1"
+"1": &"0_1",
+"2": &"0_2",
+"3": &"0_3"
 }
 nodes = {
 "0_1": {
 "link": &"1_1",
-"offset": Vector2(70, 130),
+"offset": Vector2(-140, 220),
 "start_id": "1"
 },
+"0_2": {
+"link": &"1_2",
+"offset": Vector2(-140, 600),
+"start_id": "2"
+},
+"0_3": {
+"link": &"1_3",
+"offset": Vector2(-140, 980),
+"start_id": "3"
+},
 "1_1": {
-"dialogue": "GIUWAJKHF",
-"offset": Vector2(440, 80),
+"dialogue": "I FUCKING H
+ATE MY WIFE",
+"offset": Vector2(140, 220),
 "options": {
 0: {
 "condition": {},
@@ -25,9 +38,42 @@ nodes = {
 },
 "size": {
 "x": 300.0,
-"y": 245.0
+"y": 276.0
 },
 "speaker": ""
+},
+"1_2": {
+"dialogue": "wfegsrdhftgnhmfytdgrsseghuoshoegiurhoegshoegshoegsihoegsi",
+"offset": Vector2(140, 600),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_3": {
+"dialogue": "я же последущиние так говил оюсы спаить отсдкужа баь сможриють. 
+понюл?",
+"offset": Vector2(140, 980),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": "Okay"
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": "Crom"
 }
 }
 variables = {}

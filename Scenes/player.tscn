@@ -27,6 +27,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.805047, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
+[node name="HUD" type="Control" parent="Head/Camera3D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="InteractRay" type="RayCast3D" parent="Head"]
 target_position = Vector3(0, 0, -1.5)
 script = ExtResource("2_dafap")

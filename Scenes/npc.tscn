@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b3u7pfdmkhgmk"]
+[gd_scene load_steps=22 format=3 uid="uid://b3u7pfdmkhgmk"]
 
 [ext_resource type="Script" path="res://scripts/NPC.gd" id="1_5l8sh"]
 [ext_resource type="Texture2D" uid="uid://dd7foks514yl0" path="res://Scenes/npc_0e122d6260c6dd239b0c5423b91fff2d.png" id="2_4voiq"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dmbm3s8tjmg5k" path="res://Scenes/Car 02/car2_red.png" id="4_4esar"]
 [ext_resource type="Script" path="res://scripts/State Machine.gd" id="5_ohxc2"]
 [ext_resource type="Script" path="res://scripts/EnemyIdle.gd" id="6_8mmg8"]
-[ext_resource type="PackedScene" uid="uid://dk3y3eff65p4d" path="res://Scenes/components/dialogue.tscn" id="7_b1f8u"]
 [ext_resource type="AudioStream" uid="uid://b5nvxtycj47ua" path="res://sounds/Kirby screaming and falling.ogg" id="8_wwn5s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0my7w"]
@@ -192,6 +191,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 [node name="NPC" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7358, 1.10656, -5.67113)
 script = ExtResource("1_5l8sh")
+dialog_id = "2"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_0my7w")
@@ -400,9 +400,6 @@ initial_state = NodePath("EnemyIdle")
 [node name="EnemyIdle" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("6_8mmg8")
 enemy = NodePath("../..")
-
-[node name="Dialogue" parent="." node_paths=PackedStringArray("npc") instance=ExtResource("7_b1f8u")]
-npc = NodePath("..")
 
 [node name="Screams" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_wwn5s")
