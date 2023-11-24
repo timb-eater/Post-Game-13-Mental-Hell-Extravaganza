@@ -1,18 +1,40 @@
-[gd_scene format=3 uid="uid://b68cb36ytl6n2"]
+[gd_scene load_steps=11 format=3 uid="uid://b68cb36ytl6n2"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[ext_resource type="FontFile" uid="uid://ch1twcupgh7c6" path="res://textures/NotoSerifDisplay_Condensed-Regular.ttf" id="1_aaqxx"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="1_pflml"]
+[ext_resource type="Script" path="res://Scenes/hud.gd" id="1_xbtjd"]
+[ext_resource type="Script" path="res://scripts/DialogManager.gd" id="2_3q6qb"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="2_akg28"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="3_s2h3c"]
+[ext_resource type="Resource" uid="uid://dkwbgtagy6sub" path="res://dialogue/dialog1.tres" id="4_hufrl"]
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -50.0
-grow_horizontal = 2
-grow_vertical = 0
+[sub_resource type="Theme" id="Theme_juu4g"]
+default_font = ExtResource("1_aaqxx")
 
-[node name="Subtitles" type="RichTextLabel" parent="CenterContainer"]
-layout_mode = 2
-text = "Subtitles"
-fit_content = true
-autowrap_mode = 0
+[sub_resource type="RichTextEffect" id="RichTextEffect_5trwj"]
+script = ExtResource("2_akg28")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_5jcod"]
+script = ExtResource("3_s2h3c")
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_xbtjd")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_3q6qb")
+
+[node name="DialogueBox" type="Panel" parent="Control"]
+custom_minimum_size = Vector2(256, 128)
+offset_right = 256.0
+offset_bottom = 128.0
+theme = SubResource("Theme_juu4g")
+script = ExtResource("1_pflml")
+dialogue_file = ExtResource("4_hufrl")
+start_id = "1"
+max_options = 3
+hide_character_portrait = true
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_5trwj"), SubResource("RichTextEffect_5jcod")])

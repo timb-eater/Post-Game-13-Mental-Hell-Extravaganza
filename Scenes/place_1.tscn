@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://btrpilckph03y"]
+[gd_scene load_steps=43 format=3 uid="uid://btrpilckph03y"]
 
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_6tyk5"]
 [ext_resource type="Script" path="res://scripts/place_1.gd" id="1_b8rb1"]
@@ -12,6 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://26allbqukunq" path="res://textures/256x256/Tile/Tile_03-256x256.png" id="9_o875n"]
 [ext_resource type="Texture2D" uid="uid://b2xb64c38cdm7" path="res://textures/body.png" id="10_v45xn"]
 [ext_resource type="PackedScene" uid="uid://b3u7pfdmkhgmk" path="res://Scenes/npc.tscn" id="11_u6lh5"]
+[ext_resource type="Script" path="res://Scenes/hud.gd" id="13_ttuo5"]
+[ext_resource type="FontFile" uid="uid://ch1twcupgh7c6" path="res://textures/NotoSerifDisplay_Condensed-Regular.ttf" id="14_3d272"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="15_vl6mn"]
+[ext_resource type="Resource" uid="uid://dkwbgtagy6sub" path="res://dialogue/dialog1.tres" id="16_hu7gh"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="17_l43l2"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="18_1s6f4"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_f1arw"]
 panorama = ExtResource("7_uid4g")
@@ -137,6 +143,16 @@ points = PackedVector3Array(10.5, 1.5, -13.5, 10.5, 1, -13.5, 13.5, 1, -13.5, 13
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gn6kb"]
 points = PackedVector3Array(14, 17, -6, 14, 14, -6, 17, 14, -6, 17, 17, -6, 14, 17, -3, 14, 14, -3, 17, 14, -3, 17, 17, -3)
 
+[sub_resource type="Theme" id="Theme_ouqil"]
+default_font = ExtResource("14_3d272")
+default_font_size = 0
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_5trwj"]
+script = ExtResource("17_l43l2")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_5jcod"]
+script = ExtResource("18_1s6f4")
+
 [node name="place1" type="Node3D"]
 script = ExtResource("1_b8rb1")
 
@@ -201,3 +217,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0284, 1.00369, -3.70978)
 
 [node name="NPC2" parent="." instance=ExtResource("11_u6lh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2998, 0.302871, -3.16415)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("13_ttuo5")
+
+[node name="DialogueBox" type="Panel" parent="HUD"]
+visible = false
+custom_minimum_size = Vector2(256, 128)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ouqil")
+script = ExtResource("15_vl6mn")
+dialogue_file = ExtResource("16_hu7gh")
+start_id = "1"
+max_options = 3
+options_alignment = 1
+hide_character_portrait = true
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_5trwj"), SubResource("RichTextEffect_5jcod")])
+metadata/_edit_use_anchors_ = true
+
+[connection signal="interacted" from="NPC" to="HUD" method="_on_npc_interacted"]
+[connection signal="dialogue_ended" from="HUD/DialogueBox" to="HUD" method="_on_dialogue_box_dialogue_ended"]

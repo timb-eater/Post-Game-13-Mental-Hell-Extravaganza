@@ -11,3 +11,5 @@ func _physics_process(delta):
 		var collider = get_collider()
 		if collider is NPC:
 			label.text = collider.name 
+			if Input.is_action_just_pressed("interact"):
+				collider.interact(owner)

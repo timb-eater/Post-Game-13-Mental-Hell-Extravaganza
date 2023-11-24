@@ -10,7 +10,7 @@ height = 1.97
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8fkfr"]
 height = 1.67057
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00369, 0)
 script = ExtResource("1_81gi5")
 
@@ -50,5 +50,3 @@ vertical_alignment = 1
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 1.08, 0)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]

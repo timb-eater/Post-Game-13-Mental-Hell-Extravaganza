@@ -401,7 +401,8 @@ initial_state = NodePath("EnemyIdle")
 script = ExtResource("6_8mmg8")
 enemy = NodePath("../..")
 
-[node name="Dialogue" parent="." instance=ExtResource("7_b1f8u")]
+[node name="Dialogue" parent="." node_paths=PackedStringArray("npc") instance=ExtResource("7_b1f8u")]
+npc = NodePath("..")
 
 [node name="Screams" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_wwn5s")

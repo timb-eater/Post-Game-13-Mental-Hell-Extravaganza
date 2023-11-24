@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://y6ktxc7hswc7"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_go4xe"]
+
+[resource]
+script = ExtResource("1_go4xe")
+starts = {
+"hate": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(115, 143),
+"start_id": "hate"
+},
+"1_1": {
+"dialogue": "I FUCKING H
+ATE MY WIFE",
+"offset": Vector2(400, 120),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 245.0
+},
+"speaker": ""
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = ""
