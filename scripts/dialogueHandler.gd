@@ -1,15 +1,11 @@
 extends CanvasLayer
 
-var player = null
+@onready var player = $"../Player"
 @onready var dialogue_box = $DialogueBox
 @onready var parent = get_node("..")
 @onready var npcs = parent.get_node("NPCs").get_children()
 
 func _ready():
-	# Get the parent node
-	
-	# Get all NPC nodes
-	
 	for npc in npcs:
 		npc.connect("interacted", Callable(self, "_on_npc_interacted"))
 
@@ -32,4 +28,3 @@ func _on_dialogue_box_dialogue_ended():
 	Global.can_pause = true
 	player.set_physics_process(true)
 	player.set_process_input(true)
-	player = null

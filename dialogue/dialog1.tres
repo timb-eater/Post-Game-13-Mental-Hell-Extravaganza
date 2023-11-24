@@ -8,7 +8,8 @@ starts = {
 "1": &"0_1",
 "2": &"0_2",
 "3": &"0_3",
-"4": &"0_4"
+"4": &"0_4",
+"5": &"0_5"
 }
 nodes = {
 "0_1": {
@@ -30,6 +31,11 @@ nodes = {
 "link": &"1_4",
 "offset": Vector2(-140, 1340),
 "start_id": "4"
+},
+"0_5": {
+"link": &"1_5",
+"offset": Vector2(-171.512, 1710.5),
+"start_id": "5"
 },
 "1_1": {
 "dialogue": "I FUCKING H
@@ -97,9 +103,25 @@ The man died on the way to the hospital on the way there. To the hospital.
 },
 "size": {
 "x": 300.0,
-"y": 245.0
+"y": 276.0
 },
 "speaker": "The Weekful New"
+},
+"1_5": {
+"dialogue": "Don't listen to him. It's been Resplaщing all over the place.",
+"offset": Vector2(140, 1660),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 245.0
+},
+"speaker": "Quimplo"
 }
 }
 variables = {}
