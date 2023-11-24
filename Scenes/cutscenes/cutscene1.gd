@@ -11,6 +11,6 @@ func _ready():
 func _on_animation_player_animation_finished(anim_name):
 	get_tree().change_scene_to_file("res://Scenes/place_1.tscn")
 
-func _unhandled_key_input(event)			:
+func _unhandled_key_input(event):
 	if event:
 		get_tree().change_scene_to_file("res://Scenes/place_1.tscn")

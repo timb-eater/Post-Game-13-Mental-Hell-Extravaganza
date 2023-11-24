@@ -14,8 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://d3i2ep1net3ww" path="res://textures/256x256/Bricks/Bricks_20-256x256.png" id="11_j46a3"]
 [ext_resource type="PackedScene" uid="uid://b3u7pfdmkhgmk" path="res://Scenes/npc.tscn" id="11_u6lh5"]
 [ext_resource type="Texture2D" uid="uid://dij2tprdxsfah" path="res://textures/256x256/Tile/Tile_25-256x256.png" id="12_krkiu"]
-[ext_resource type="Script" path="res://Scenes/hud.gd" id="13_ttuo5"]
 [ext_resource type="FontFile" uid="uid://ch1twcupgh7c6" path="res://textures/NotoSerifDisplay_Condensed-Regular.ttf" id="14_3d272"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="14_75rme"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="15_vl6mn"]
 [ext_resource type="Resource" uid="uid://dkwbgtagy6sub" path="res://dialogue/dialog1.tres" id="16_hu7gh"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="17_l43l2"]
@@ -513,7 +513,7 @@ shape = SubResource("ConvexPolygonShape3D_ctc4n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0284, 1.00369, -3.70978)
 
 [node name="Dialogue" type="CanvasLayer" parent="."]
-script = ExtResource("13_ttuo5")
+script = ExtResource("14_75rme")
 
 [node name="DialogueBox" type="Panel" parent="Dialogue"]
 visible = false
