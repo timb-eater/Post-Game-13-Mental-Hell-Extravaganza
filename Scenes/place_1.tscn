@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d3i2ep1net3ww" path="res://textures/256x256/Bricks/Bricks_20-256x256.png" id="11_j46a3"]
 [ext_resource type="Texture2D" uid="uid://dij2tprdxsfah" path="res://textures/256x256/Tile/Tile_25-256x256.png" id="12_krkiu"]
 [ext_resource type="FontFile" uid="uid://ch1twcupgh7c6" path="res://textures/NotoSerifDisplay_Condensed-Regular.ttf" id="14_3d272"]
-[ext_resource type="Script" path="res://scripts/interactionHandler.gd" id="14_ccm8u"]
+[ext_resource type="Script" path="res://scripts/dialogueHandler.gd" id="14_pxxjy"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="15_vl6mn"]
 [ext_resource type="Resource" uid="uid://dkwbgtagy6sub" path="res://dialogue/dialog1.tres" id="16_hu7gh"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="17_l43l2"]
@@ -529,7 +529,7 @@ shape = SubResource("ConvexPolygonShape3D_ctc4n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0284, 1.00369, -3.70978)
 
 [node name="InteractionHandler" type="CanvasLayer" parent="."]
-script = ExtResource("14_ccm8u")
+script = ExtResource("14_pxxjy")
 
 [node name="DialogueBox" type="Panel" parent="InteractionHandler"]
 visible = false
@@ -556,7 +556,7 @@ metadata/_edit_use_anchors_ = true
 [node name="NPCs" type="Node" parent="."]
 
 [node name="фоаырв" type="CharacterBody3D" parent="NPCs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7358, 13.0745, -5.67113)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.736, 106.388, -5.671)
 script = ExtResource("19_podcq")
 dialog_id = "1"
 
@@ -1657,20 +1657,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.6566, 0)
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2947, 3.1492, 0)
 
-[node name="Teleport" type="StaticBody3D" parent="."]
+[node name="door1" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.5229, 2.66223, 1.83009)
 script = ExtResource("24_3pir3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door1"]
 shape = SubResource("BoxShape3D_c1iv5")
 
-[node name="Sprite3D" type="Sprite3D" parent="Teleport"]
+[node name="Sprite3D" type="Sprite3D" parent="door1"]
 pixel_size = 0.052
 billboard = 1
 texture = ExtResource("10_v45xn")
 
-[node name="Marker3D" type="Marker3D" parent="Teleport"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.30863, -1.01469, 0)
+[node name="Marker3D" type="Marker3D" parent="door1"]
+transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, -4.30863, -2.19975, 0)
 
 [connection signal="dialogue_ended" from="InteractionHandler/DialogueBox" to="InteractionHandler" method="_on_dialogue_box_dialogue_ended"]
 [connection signal="interacted" from="NPCs/фоаырв" to="InteractionHandler" method="_on_npc_interacted"]
@@ -1682,6 +1682,4 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.308
 [connection signal="interacted" from="NPCs/алф2" to="InteractionHandler" method="_on_npc_2_interacted"]
 [connection signal="timeout" from="NPCs/алф2/Timer" to="NPCs/алф2" method="_on_timer_timeout" flags=18]
 [connection signal="timeout" from="NPCs/алф3/Timer" to="NPCs/алф3" method="_on_timer_timeout" flags=18]
-[connection signal="interacted" from="Teleport" to="InteractionHandler" method="_on_teleport_interacted"]
-[connection signal="interacted" from="Teleport" to="InteractionHandler" method="_on_static_body_3d_interacted"]
-[connection signal="interacted" from="Teleport" to="Teleport" method="_on_interacted"]
+[connection signal="interacted" from="door1" to="." method="_on_teleport_interacted"]

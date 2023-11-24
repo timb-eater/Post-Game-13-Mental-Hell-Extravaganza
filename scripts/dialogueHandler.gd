@@ -33,8 +33,3 @@ func _on_dialogue_box_dialogue_ended():
 	player.set_physics_process(true)
 	player.set_process_input(true)
 	player = null
-
-
-func _on_teleport_interacted(body):
-#	Global.goto_scene()
-	pass

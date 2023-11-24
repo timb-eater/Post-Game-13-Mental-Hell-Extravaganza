@@ -128,15 +128,15 @@ hide_character_portrait = true
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_5trwj"), SubResource("RichTextEffect_5jcod")])
 metadata/_edit_use_anchors_ = true
 
-[node name="door1" type="StaticBody3D" parent="."]
+[node name="Teleport" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.72299, -6.95119)
 script = ExtResource("13_oqwhh")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="door1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport"]
 shape = SubResource("BoxShape3D_hysgp")
 
-[node name="Marker3D" type="Marker3D" parent="door1"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.283385, -3.48937, 4.88197)
+[node name="door1" type="Marker3D" parent="Teleport"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.26746, -1.01469, 4.52277)
 
 [connection signal="dialogue_ended" from="DialogueHandler/DialogueBox" to="DialogueHandler" method="_on_dialogue_box_dialogue_ended"]
-[connection signal="interacted" from="door1" to="." method="_on_teleport_interacted"]
+[connection signal="interacted" from="Teleport" to="." method="_on_teleport_interacted"]
