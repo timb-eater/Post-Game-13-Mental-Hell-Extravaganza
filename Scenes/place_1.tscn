@@ -1669,6 +1669,9 @@ pixel_size = 0.052
 billboard = 1
 texture = ExtResource("10_v45xn")
 
+[node name="Marker3D" type="Marker3D" parent="Teleport"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.30863, -1.01469, 0)
+
 [connection signal="dialogue_ended" from="InteractionHandler/DialogueBox" to="InteractionHandler" method="_on_dialogue_box_dialogue_ended"]
 [connection signal="interacted" from="NPCs/фоаырв" to="InteractionHandler" method="_on_npc_interacted"]
 [connection signal="timeout" from="NPCs/фоаырв/Timer" to="NPCs/фоаырв" method="_on_timer_timeout" flags=18]
@@ -1679,6 +1682,6 @@ texture = ExtResource("10_v45xn")
 [connection signal="interacted" from="NPCs/алф2" to="InteractionHandler" method="_on_npc_2_interacted"]
 [connection signal="timeout" from="NPCs/алф2/Timer" to="NPCs/алф2" method="_on_timer_timeout" flags=18]
 [connection signal="timeout" from="NPCs/алф3/Timer" to="NPCs/алф3" method="_on_timer_timeout" flags=18]
-[connection signal="interacted" from="Teleport" to="InteractionHandler" method="_on_static_body_3d_interacted"]
 [connection signal="interacted" from="Teleport" to="InteractionHandler" method="_on_teleport_interacted"]
+[connection signal="interacted" from="Teleport" to="InteractionHandler" method="_on_static_body_3d_interacted"]
 [connection signal="interacted" from="Teleport" to="Teleport" method="_on_interacted"]
