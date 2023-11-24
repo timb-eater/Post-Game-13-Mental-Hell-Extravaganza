@@ -1,0 +1,98 @@
+[gd_scene load_steps=19 format=3 uid="uid://c1euc6rnmtg3o"]
+
+[ext_resource type="FontFile" uid="uid://ch1twcupgh7c6" path="res://textures/NotoSerifDisplay_Condensed-Regular.ttf" id="2_v81f1"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="3_gieaa"]
+[ext_resource type="Resource" uid="uid://dkwbgtagy6sub" path="res://dialogue/dialog1.tres" id="4_p5036"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="5_8c7a2"]
+[ext_resource type="Script" path="res://scripts/interactionHandler.gd" id="5_yboxd"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="6_6pv2w"]
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="7_62x5d"]
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="8_qqgqw"]
+[ext_resource type="Texture2D" uid="uid://dyva0gncw7t65" path="res://textures/256x256/Wood/Wood_01-256x256.png" id="9_8ncpy"]
+[ext_resource type="PackedScene" uid="uid://cm6e632jxk5md" path="res://Scenes/player.tscn" id="10_6mbgx"]
+
+[sub_resource type="Environment" id="Environment_qhmmk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3h1t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7tnwe"]
+albedo_texture = ExtResource("9_8ncpy")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wrpyt"]
+_surfaces = [{
+"aabb": AABB(-5, 1.5, -5.5, 13, 0.50001, 15),
+"attribute_data": PackedByteArray(0, 0, 160, 190, 0, 0, 0, 190, 0, 0, 160, 190, 0, 0, 192, 189, 0, 0, 0, 63, 0, 0, 192, 189, 0, 0, 0, 63, 0, 0, 0, 190, 0, 0, 176, 190, 0, 0, 0, 190, 0, 0, 24, 63, 0, 0, 0, 190, 0, 0, 24, 63, 0, 0, 192, 189, 0, 0, 176, 190, 0, 0, 192, 189, 0, 0, 176, 190, 0, 0, 0, 191, 0, 0, 176, 190, 0, 0, 160, 62, 0, 0, 24, 63, 0, 0, 160, 62, 0, 0, 24, 63, 0, 0, 0, 191, 0, 0, 176, 190, 0, 0, 0, 191, 0, 0, 24, 63, 0, 0, 0, 191, 0, 0, 24, 63, 0, 0, 160, 62, 0, 0, 176, 190, 0, 0, 160, 62, 0, 0, 176, 190, 0, 0, 0, 190, 0, 0, 176, 190, 0, 0, 192, 189, 0, 0, 24, 63, 0, 0, 192, 189, 0, 0, 24, 63, 0, 0, 0, 190, 0, 0, 160, 190, 0, 0, 0, 190, 0, 0, 0, 63, 0, 0, 0, 190, 0, 0, 0, 63, 0, 0, 192, 189, 0, 0, 160, 190, 0, 0, 192, 189),
+"format": 4119,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 16, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 20, 0, 22, 0, 23, 0),
+"material": SubResource("StandardMaterial3D_7tnwe"),
+"name": "256x256/Wood/Wood_01-256x256",
+"primitive": 3,
+"vertex_count": 24,
+"vertex_data": PackedByteArray(0, 0, 160, 192, 0, 0, 0, 64, 0, 0, 176, 192, 255, 255, 255, 255, 255, 255, 255, 63, 0, 0, 160, 192, 0, 0, 192, 63, 0, 0, 176, 192, 255, 255, 255, 255, 255, 255, 255, 63, 0, 0, 0, 65, 0, 0, 192, 63, 0, 0, 176, 192, 255, 255, 255, 255, 255, 255, 255, 63, 0, 0, 0, 65, 0, 0, 0, 64, 0, 0, 176, 192, 255, 255, 255, 255, 255, 255, 255, 63, 0, 0, 160, 192, 0, 0, 0, 64, 0, 0, 176, 192, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 160, 192, 0, 0, 0, 64, 0, 0, 24, 65, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 160, 192, 0, 0, 192, 63, 0, 0, 24, 65, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 160, 192, 0, 0, 192, 63, 0, 0, 176, 192, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 0, 65, 0, 0, 192, 63, 0, 0, 176, 192, 255, 127, 0, 0, 255, 127, 255, 63, 0, 0, 160, 192, 0, 0, 192, 63, 0, 0, 176, 192, 255, 127, 0, 0, 255, 127, 255, 63, 0, 0, 160, 192, 0, 0, 192, 63, 0, 0, 24, 65, 255, 127, 0, 0, 255, 127, 255, 63, 0, 0, 0, 65, 0, 0, 192, 63, 0, 0, 24, 65, 255, 127, 0, 0, 255, 127, 255, 63, 0, 0, 0, 65, 0, 0, 0, 64, 0, 0, 176, 192, 255, 127, 255, 255, 255, 127, 255, 191, 0, 0, 0, 65, 0, 0, 0, 64, 0, 0, 24, 65, 255, 127, 255, 255, 255, 127, 255, 191, 0, 0, 160, 192, 0, 0, 0, 64, 0, 0, 24, 65, 255, 127, 255, 255, 255, 127, 255, 191, 0, 0, 160, 192, 0, 0, 0, 64, 0, 0, 176, 192, 255, 127, 255, 255, 255, 127, 255, 191, 0, 0, 0, 65, 0, 0, 0, 64, 0, 0, 176, 192, 255, 255, 255, 127, 255, 127, 255, 63, 0, 0, 0, 65, 0, 0, 192, 63, 0, 0, 176, 192, 255, 255, 255, 127, 255, 127, 255, 63, 0, 0, 0, 65, 0, 0, 192, 63, 0, 0, 24, 65, 255, 255, 255, 127, 255, 127, 255, 63, 0, 0, 0, 65, 0, 0, 0, 64, 0, 0, 24, 65, 255, 255, 255, 127, 255, 127, 255, 63, 0, 0, 160, 192, 0, 0, 0, 64, 0, 0, 24, 65, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 65, 0, 0, 0, 64, 0, 0, 24, 65, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 65, 0, 0, 192, 63, 0, 0, 24, 65, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 160, 192, 0, 0, 192, 63, 0, 0, 24, 65, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1xst7"]
+points = PackedVector3Array(-5, 2, -5.5, -5, 1.5, -5.5, 8, 1.5, -5.5, 8, 2, -5.5, -5, 2, 9.5, -5, 1.5, 9.5, 8, 1.5, 9.5, 8, 2, 9.5)
+
+[sub_resource type="Theme" id="Theme_u1olk"]
+default_font = ExtResource("2_v81f1")
+default_font_size = 0
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_5trwj"]
+script = ExtResource("5_8c7a2")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_5jcod"]
+script = ExtResource("6_6pv2w")
+
+[node name="place_2" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qhmmk")
+
+[node name="NPCs" type="Node" parent="."]
+
+[node name="QodotMap" type="Node3D" parent="."]
+script = ExtResource("7_62x5d")
+map_file = "C:/Users/Zomda/Documents/0/Godot Projects/Narc/maps/place2.map"
+entity_fgd = ExtResource("8_qqgqw")
+texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
+default_material = SubResource("StandardMaterial3D_t3h1t")
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="QodotMap"]
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="QodotMap/entity_0_worldspawn"]
+mesh = SubResource("ArrayMesh_wrpyt")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="QodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_1xst7")
+
+[node name="Player" parent="." instance=ExtResource("10_6mbgx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.32884, 0)
+
+[node name="InteractionHandler" type="CanvasLayer" parent="."]
+script = ExtResource("5_yboxd")
+
+[node name="DialogueBox" type="Panel" parent="InteractionHandler"]
+visible = false
+custom_minimum_size = Vector2(256, 128)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_u1olk")
+script = ExtResource("3_gieaa")
+dialogue_file = ExtResource("4_p5036")
+max_options = 3
+options_alignment = 1
+hide_character_portrait = true
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_5trwj"), SubResource("RichTextEffect_5jcod")])
+metadata/_edit_use_anchors_ = true
+
+[connection signal="dialogue_ended" from="InteractionHandler/DialogueBox" to="InteractionHandler" method="_on_dialogue_box_dialogue_ended"]

@@ -7,7 +7,8 @@ script = ExtResource("1_fef6i")
 starts = {
 "1": &"0_1",
 "2": &"0_2",
-"3": &"0_3"
+"3": &"0_3",
+"4": &"0_4"
 }
 nodes = {
 "0_1": {
@@ -24,6 +25,11 @@ nodes = {
 "link": &"1_3",
 "offset": Vector2(-140, 980),
 "start_id": "3"
+},
+"0_4": {
+"link": &"1_4",
+"offset": Vector2(-140, 1340),
+"start_id": "4"
 },
 "1_1": {
 "dialogue": "I FUCKING H
@@ -74,6 +80,26 @@ ATE MY WIFE",
 "y": 276.0
 },
 "speaker": "Crom"
+},
+"1_4": {
+"dialogue": "[b]MAN KILLED AFTER BEING STRANGLED FOR 58 MINUTES AND 39 SECONDS[/b]
+At a Target yesterday, a dispute between a customer and an employee turned fatal after the employee was confronted.
+Employee havding nothign left to do, he deciced to trap the violent man in a chokehold and held on for 59 minutes and 39 seconds. 
+The man died on the way to the hospital on the way there. To the hospital.
+\"Such a shame, really.\" the Man siad. \"Grateful economic.\"",
+"offset": Vector2(140, 1340),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 245.0
+},
+"speaker": "The Weekful New"
 }
 }
 variables = {}

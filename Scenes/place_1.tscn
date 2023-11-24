@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b3u7pfdmkhgmk" path="res://Scenes/npc.tscn" id="11_u6lh5"]
 [ext_resource type="Texture2D" uid="uid://dij2tprdxsfah" path="res://textures/256x256/Tile/Tile_25-256x256.png" id="12_krkiu"]
 [ext_resource type="FontFile" uid="uid://ch1twcupgh7c6" path="res://textures/NotoSerifDisplay_Condensed-Regular.ttf" id="14_3d272"]
-[ext_resource type="Script" path="res://scripts/hud.gd" id="14_75rme"]
+[ext_resource type="Script" path="res://scripts/interactionHandler.gd" id="14_ccm8u"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="15_vl6mn"]
 [ext_resource type="Resource" uid="uid://dkwbgtagy6sub" path="res://dialogue/dialog1.tres" id="16_hu7gh"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="17_l43l2"]
@@ -40,8 +40,7 @@ sky_material = SubResource("PanoramaSkyMaterial_f1arw")
 background_mode = 2
 sky = SubResource("Sky_m43nv")
 ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 0.431373)
-ambient_light_energy = 1.67
+ambient_light_color = Color(1, 1, 1, 1)
 fog_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 0.3245
@@ -512,10 +511,10 @@ shape = SubResource("ConvexPolygonShape3D_ctc4n")
 [node name="Player" parent="." instance=ExtResource("8_0eluu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0284, 1.00369, -3.70978)
 
-[node name="Dialogue" type="CanvasLayer" parent="."]
-script = ExtResource("14_75rme")
+[node name="InteractionHandler" type="CanvasLayer" parent="."]
+script = ExtResource("14_ccm8u")
 
-[node name="DialogueBox" type="Panel" parent="Dialogue"]
+[node name="DialogueBox" type="Panel" parent="InteractionHandler"]
 visible = false
 custom_minimum_size = Vector2(256, 128)
 anchors_preset = 7
@@ -759,7 +758,7 @@ max_distance = 50.0
 [node name="алф2" type="CharacterBody3D" parent="NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.1738, 4.85587, -3.80213)
 script = ExtResource("19_podcq")
-dialog_id = "2"
+dialog_id = "4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/алф2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.915, 0, 0, 0)
@@ -1213,23 +1212,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.6566, 0)
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2947, 3.1492, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Teleport" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.5229, 2.66223, 1.83009)
 script = ExtResource("24_3pir3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport"]
 shape = SubResource("BoxShape3D_c1iv5")
 
-[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+[node name="Sprite3D" type="Sprite3D" parent="Teleport"]
 pixel_size = 0.052
 billboard = 1
 texture = ExtResource("10_v45xn")
 
-[connection signal="dialogue_ended" from="Dialogue/DialogueBox" to="Dialogue" method="_on_dialogue_box_dialogue_ended"]
-[connection signal="interacted" from="NPCs/фоаырв" to="Dialogue" method="_on_npc_interacted"]
-[connection signal="interacted" from="NPCs/алф" to="Dialogue" method="_on_npc_2_interacted"]
-[connection signal="interacted" from="NPCs/Crom" to="Dialogue" method="_on_npc_2_interacted"]
+[connection signal="dialogue_ended" from="InteractionHandler/DialogueBox" to="InteractionHandler" method="_on_dialogue_box_dialogue_ended"]
+[connection signal="interacted" from="NPCs/фоаырв" to="InteractionHandler" method="_on_npc_interacted"]
+[connection signal="interacted" from="NPCs/алф" to="InteractionHandler" method="_on_npc_2_interacted"]
+[connection signal="interacted" from="NPCs/Crom" to="InteractionHandler" method="_on_npc_2_interacted"]
 [connection signal="timeout" from="NPCs/Crom/Timer" to="NPCs/Crom" method="_on_timer_timeout" flags=18]
-[connection signal="interacted" from="NPCs/алф2" to="Dialogue" method="_on_npc_2_interacted"]
+[connection signal="interacted" from="NPCs/алф2" to="InteractionHandler" method="_on_npc_2_interacted"]
 [connection signal="timeout" from="NPCs/алф2/Timer" to="NPCs/алф2" method="_on_timer_timeout" flags=18]
 [connection signal="timeout" from="NPCs/алф3/Timer" to="NPCs/алф3" method="_on_timer_timeout" flags=18]
+[connection signal="interacted" from="Teleport" to="InteractionHandler" method="_on_static_body_3d_interacted"]
+[connection signal="interacted" from="Teleport" to="InteractionHandler" method="_on_teleport_interacted"]
