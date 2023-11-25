@@ -33,3 +33,14 @@ func _on_interactable_interacted(body):
 
 func _on_tv_interacted(body):
 	pass #later make player go some other fucking place
+
+
+func _on_area_3d_body_entered(body):
+	body.global_transform.origin = $door1/Marker3D.global_transform.origin
+	$AudioStreamPlayer.play()
+	if body.name == "Manball":
+		$DialogueHandler/RichTextLabel.show()
+
+
+func _on_door_2_interacted(body):
+	get_tree().change_scene_to_file("res://Scenes/cutscenes/cutscene2.tscn")

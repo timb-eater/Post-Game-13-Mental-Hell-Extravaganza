@@ -2,9 +2,6 @@ extends Control
 
 @onready var pause_menu = $pause_menu
 
-func _ready():
-	pause()
-
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("pause") and Global.can_pause:
 		pause()
