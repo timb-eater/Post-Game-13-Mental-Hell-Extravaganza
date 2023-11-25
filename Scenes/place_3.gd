@@ -22,3 +22,8 @@ func _on_npc_interacted(body, id):
 func _on_area_3d_body_entered(body):
 	if body.name == "Player":
 		body.global_position = $door3/Marker3D.global_position
+
+
+func _on_chaser_box_body_entered(body):
+	if body.name == "Player":
+		body.rotate_x(90)

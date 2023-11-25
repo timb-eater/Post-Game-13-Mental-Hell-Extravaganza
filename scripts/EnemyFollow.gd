@@ -2,26 +2,30 @@ extends State
 class_name EnemyFollow
 
 @export var enemy: CharacterBody3D
-@export var move_speed := 10.0
-var player: CharacterBody2D
+@export var move_speed := 10
+@onready var player = $"../../../../Player"
+@export var threshold := 100
+@export var chase_sound : AudioStreamPlayer3D
+
+signal reached_player(body)
 
 func Enter():
-	player = get_tree().get_first_node_in_group("Player")
-
-func Physics_Update(delta: float):
-	var direction = player.global_position - enemy.global_position
-	
-	if direction.length() > 25:
-		enemy.velocity = direction.normalized * move_speed
-	else:
-		enemy.velocity = Vector3()
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
 	pass
+func Physics_Update(delta: float):
+	var direction = enemy.position.direction_to(player.global_position)
+	var distance_from_player = enemy.position.distance_to(player.global_position)
+
+	if distance_from_player < threshold:
+		if !chase_sound.playing:
+			chase_sound.play()
+		enemy.velocity.x = direction.x * move_speed
+		enemy.velocity.z = direction.z * move_speed
+		var target_direction = enemy.global_transform.origin + enemy.velocity.normalized()
+		enemy.look_at(target_direction, Vector3.UP)
+	else:
+		chase_sound.playing = false
+		enemy.velocity.x = 0
+		enemy.velocity.z = 0
+	
+	if direction.length() > 5:
+		emit_signal("reached_player", enemy)

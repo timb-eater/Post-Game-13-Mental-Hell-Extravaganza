@@ -4,6 +4,8 @@ class_name EnemyIdle
 @export var enemy: CharacterBody3D
 @export var move_speed := 3
 
+var player : CharacterBody3D
+
 var move_direction : Vector3
 var wander_time : float
 var wait_time : float
@@ -16,6 +18,7 @@ func randomize_wander():
 	wait_time = randf_range(1, 3)
 	
 func Enter():
+	player = get_tree().get_first_node_in_group("Player")
 	randomize_wander()
 
 func Update(delta: float):

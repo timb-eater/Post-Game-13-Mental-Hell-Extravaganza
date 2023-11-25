@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cbb80go1e4sc7"]
+[gd_scene load_steps=44 format=3 uid="uid://cbb80go1e4sc7"]
 
 [ext_resource type="Script" path="res://scripts/dialogueHandler.gd" id="1_4jo1n"]
 [ext_resource type="Script" path="res://Scenes/place_3.gd" id="1_l2dbm"]
@@ -17,7 +17,6 @@
 [ext_resource type="Script" path="res://scripts/EnemyIdle.gd" id="11_f57xo"]
 [ext_resource type="AudioStream" uid="uid://b5nvxtycj47ua" path="res://sounds/Kirby screaming and falling.ogg" id="12_uuulc"]
 [ext_resource type="Script" path="res://scripts/EnemyFollow.gd" id="14_btjfq"]
-[ext_resource type="AudioStream" uid="uid://d3v8jrxigh4cl" path="res://sounds/pussy.ogg" id="16_2tafa"]
 [ext_resource type="PackedScene" uid="uid://cm6e632jxk5md" path="res://Scenes/player.tscn" id="16_rmeri"]
 [ext_resource type="AudioStream" uid="uid://bf2f4c2p7u64m" path="res://sounds/audio.ogg" id="17_yqhhr"]
 
@@ -214,9 +213,6 @@ states/idle/position = Vector2(309, 100)
 states/walk/node = SubResource("AnimationNodeAnimation_x2yg6")
 states/walk/position = Vector2(422, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_w70gu"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_b14mf"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_ppg5k")]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_io6ro"]
-size = Vector3(3.44588, 1, 1.31399)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nuqgx"]
 
@@ -500,21 +496,21 @@ doppler_tracking = 2
 
 [node name="TikTok" type="Timer" parent="NPCs/Npc"]
 
-[node name="Kevщn" type="CharacterBody3D" parent="NPCs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41363, 2.9686, 110.271)
+[node name="Chaser" type="CharacterBody3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41363, 2.9686, 21.3746)
 script = ExtResource("7_acvtn")
 dialog_id = "1"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Kevщn"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Chaser"]
 shape = SubResource("CapsuleShape3D_igwuv")
 
-[node name="npc" type="Node3D" parent="NPCs/Kevщn"]
+[node name="npc" type="Node3D" parent="NPCs/Chaser"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="metarig" type="Node3D" parent="NPCs/Kevщn/npc"]
+[node name="metarig" type="Node3D" parent="NPCs/Chaser/npc"]
 transform = Transform3D(-1.19209e-07, 0, 1, 0, 1, 0, -1, 0, -1.19209e-07, 0, -1, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="NPCs/Kevщn/npc/metarig"]
+[node name="Skeleton3D" type="Skeleton3D" parent="NPCs/Chaser/npc/metarig"]
 bones/0/name = "spine"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, -5.63408e-09, 2.85e-07, 2.47628e-08, 0.997742, -0.0671628, -2.83978e-07, 0.0671628, 0.997742, 5.28485e-09, 0.9199, 0.0148)
@@ -684,52 +680,41 @@ bones/23/position = Vector3(0.0380001, 0.0199704, 0.0879903)
 bones/23/rotation = Quaternion(0.679705, -0.679705, 0.194937, 0.194938)
 bones/23/scale = Vector3(1, 1, 1)
 
-[node name="mesh" type="MeshInstance3D" parent="NPCs/Kevщn/npc/metarig/Skeleton3D"]
-transform = Transform3D(12.5534, 0, 0, 0, 2.4617, 0, 0, 0, 1, 0, 0, 0)
+[node name="mesh" type="MeshInstance3D" parent="NPCs/Chaser/npc/metarig/Skeleton3D"]
 mesh = SubResource("ArrayMesh_r4vms")
 skin = SubResource("Skin_rcps7")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NPCs/Kevщn"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPCs/Chaser"]
 root_node = NodePath("../npc")
 libraries = {
 "": SubResource("AnimationLibrary_y5x5b")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="NPCs/Kevщn"]
+[node name="AnimationTree" type="AnimationTree" parent="NPCs/Chaser"]
 tree_root = SubResource("AnimationNodeStateMachine_1tvmm")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/conditions/idle = true
 parameters/conditions/walk = false
 
-[node name="Timer" type="Timer" parent="NPCs/Kevщn"]
+[node name="Timer" type="Timer" parent="NPCs/Chaser"]
 wait_time = 2.0
 
-[node name="State Machine" type="Node" parent="NPCs/Kevщn" node_paths=PackedStringArray("initial_state")]
+[node name="State Machine" type="Node" parent="NPCs/Chaser" node_paths=PackedStringArray("initial_state")]
 script = ExtResource("10_6uqd1")
 initial_state = NodePath("Follow")
 
-[node name="Follow" type="Node" parent="NPCs/Kevщn/State Machine" node_paths=PackedStringArray("enemy", "chase_sound")]
+[node name="Follow" type="Node" parent="NPCs/Chaser/State Machine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("14_btjfq")
 enemy = NodePath("../..")
-move_speed = 7
-threshold = 1000
-chase_sound = NodePath("../../p word")
 
-[node name="p word" type="AudioStreamPlayer3D" parent="NPCs/Kevщn"]
-stream = ExtResource("16_2tafa")
+[node name="Screams" type="AudioStreamPlayer3D" parent="NPCs/Chaser"]
+stream = ExtResource("12_uuulc")
 unit_size = 35.82
-pitch_scale = 0.62
 max_distance = 50.0
 doppler_tracking = 2
 
-[node name="TikTok" type="Timer" parent="NPCs/Kevщn"]
-
-[node name="chaser box" type="Area3D" parent="NPCs/Kevщn"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Kevщn/chaser box"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.925, 0, 0, 0)
-shape = SubResource("BoxShape3D_io6ro")
+[node name="TikTok" type="Timer" parent="NPCs/Chaser"]
 
 [node name="Player" parent="." instance=ExtResource("16_rmeri")]
 
@@ -768,9 +753,7 @@ shape = SubResource("BoxShape3D_01q2c")
 [connection signal="interacted" from="NPCs/Npc" to="." method="_on_npc_interacted"]
 [connection signal="timeout" from="NPCs/Npc/Timer" to="NPCs/Npc" method="_on_timer_timeout" flags=18]
 [connection signal="timeout" from="NPCs/Npc/TikTok" to="." method="_on_tik_tok_timeout"]
-[connection signal="interacted" from="NPCs/Kevщn" to="." method="_on_npc_interacted"]
-[connection signal="timeout" from="NPCs/Kevщn/Timer" to="NPCs/Kevщn" method="_on_timer_timeout" flags=18]
-[connection signal="reached_player" from="NPCs/Kevщn/State Machine/Follow" to="." method="_on_follow_reached_player"]
-[connection signal="timeout" from="NPCs/Kevщn/TikTok" to="." method="_on_tik_tok_timeout"]
-[connection signal="body_entered" from="NPCs/Kevщn/chaser box" to="." method="_on_chaser_box_body_entered"]
+[connection signal="interacted" from="NPCs/Chaser" to="." method="_on_npc_interacted"]
+[connection signal="timeout" from="NPCs/Chaser/Timer" to="NPCs/Chaser" method="_on_timer_timeout" flags=18]
+[connection signal="timeout" from="NPCs/Chaser/TikTok" to="." method="_on_tik_tok_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
