@@ -34,3 +34,7 @@ func _on_resume_pressed():
 func _on_h_slider_value_changed(value):
 	$pause_menu/Options/Sensitivity.text = "sensitivity: " + str(Global.sensitivity)
 	Global.sensitivity = value
+
+
+func _on_save_pressed():
+	Global.save_data($"../../..".global_position, get_tree().current_scene.scene_file_path)

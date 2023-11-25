@@ -300,7 +300,7 @@ ambient_light_energy = 0.5
 script = ExtResource("1_ktcq3")
 
 [node name="fuck" parent="." instance=ExtResource("1_s6tku")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 8.3937)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1.20134)
 
 [node name="fuck2" parent="." instance=ExtResource("1_s6tku")]
 transform = Transform3D(-2.41957e-08, 0, 3.32966, 0.553534, -1.17913e-07, 1.45544e-07, 2.41957e-08, 2.69753, 6.36194e-15, 0, -0.627703, 8.3937)

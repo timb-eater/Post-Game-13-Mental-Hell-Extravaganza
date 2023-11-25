@@ -11,6 +11,7 @@ var player = null
 func _ready():
 	position_player($Player, $Player/Head)
 	$"Swinging Man/swinging man/AnimationPlayer".playback_active = true
+	print($Player.global_position)
 
 func position_player(player, playerHead):
 	if Global.destination:
