@@ -28,7 +28,3 @@ func _on_dialogue_box_dialogue_ended():
 	Global.can_pause = true
 	player.set_physics_process(true)
 	player.set_process_input(true)
-
-
-func _on_door_2_interacted(body, id):
-	pass # Replace with function body.

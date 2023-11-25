@@ -6,7 +6,8 @@
 script = ExtResource("1_go4xe")
 starts = {
 "1": &"0_1",
-"2": &"0_2"
+"2": &"0_2",
+"3": &"0_3"
 }
 nodes = {
 "0_1": {
@@ -18,6 +19,11 @@ nodes = {
 "link": &"1_2",
 "offset": Vector2(49, 502),
 "start_id": "2"
+},
+"0_3": {
+"link": &"1_3",
+"offset": Vector2(-9.66661, 845.841),
+"start_id": "3"
 },
 "1_1": {
 "dialogue": "Habooch",
@@ -38,6 +44,75 @@ nodes = {
 "1_2": {
 "dialogue": "Commism.",
 "offset": Vector2(380, 460),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_3": {
+"dialogue": "Please forget about me?",
+"offset": Vector2(276.593, 786.615),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": "10"
+},
+1: {
+"condition": {},
+"link": &"1_4",
+"text": "34"
+}
+},
+"size": {
+"x": 300.0,
+"y": 307.0
+},
+"speaker": ""
+},
+"1_4": {
+"dialogue": "84	1",
+"offset": Vector2(700, 1060),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 245.0
+},
+"speaker": "Two2"
+},
+"1_5": {
+"dialogue": "gbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"offset": Vector2(696.346, 768.795),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 245.0
+},
+"speaker": "bamn"
+},
+"1_6": {
+"dialogue": "You're Nothing To me.",
+"offset": Vector2(1160, 860),
 "options": {
 0: {
 "condition": {},

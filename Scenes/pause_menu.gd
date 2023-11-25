@@ -2,11 +2,17 @@ extends Control
 
 @onready var pause_menu = $pause_menu
 
+func _ready():
+	$pause_menu/Options/Sensitivity.text = "sensitivity: " + str(Global.sensitivity)
+	$pause_menu/Options/HSlider.value = Global.sensitivity
+	$pause_menu.hide()
+
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("pause") and Global.can_pause:
 		pause()
 
 func pause():
+	Global.paused = !Global.paused
 	if Global.paused:
 		pause_menu.show()
 		get_tree().paused = true
@@ -15,7 +21,6 @@ func pause():
 		pause_menu.hide()
 		get_tree().paused = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	Global.paused = !Global.paused
 
 
 func _on_quit_pressed():
@@ -24,3 +29,8 @@ func _on_quit_pressed():
 
 func _on_resume_pressed():
 	pause()
+
+
+func _on_h_slider_value_changed(value):
+	$pause_menu/Options/Sensitivity.text = "sensitivity: " + str(Global.sensitivity)
+	Global.sensitivity = value

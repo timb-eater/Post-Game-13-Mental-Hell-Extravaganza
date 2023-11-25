@@ -1,0 +1,16 @@
+// Game: Qodot
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures;textures/256x256/Bricks;textures/256x256/Grass;textures/256x256/Roofs;textures/256x256/Tile;textures/256x256/Wood"
+// brush 0
+{
+( -224 368 -48 ) ( -224 -352 -48 ) ( -224 -352 -64 ) "artbreeder-portraits_sg2-2023-11-25T01 52 07.420Z" 0 0 0 0.2 0.2
+( -224 -352 -48 ) ( 240 -352 -48 ) ( 240 -352 -64 ) "artbreeder-portraits_sg2-2023-11-25T01 52 07.420Z" 0 0 0 0.2 0.2
+( 240 -352 -64 ) ( 240 368 -64 ) ( -224 368 -64 ) "artbreeder-portraits_sg2-2023-11-25T01 52 07.420Z" 0 0 0 0.2 0.2
+( -224 368 -48 ) ( 240 368 -48 ) ( 240 -352 -48 ) "artbreeder-portraits_sg2-2023-11-25T01 52 07.420Z" 0 0 0 0.2 0.2
+( 240 368 -64 ) ( 240 368 -48 ) ( -224 368 -48 ) "artbreeder-portraits_sg2-2023-11-25T01 52 07.420Z" 0 0 0 0.2 0.2
+( 240 -352 -48 ) ( 240 368 -48 ) ( 240 368 -64 ) "artbreeder-portraits_sg2-2023-11-25T01 52 07.420Z" 0 0 0 0.2 0.2
+}
+}

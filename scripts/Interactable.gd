@@ -5,6 +5,7 @@ signal interacted(body)
 
 @export var prompt_message = "Interact"
 @export var prompt_action = "interact"
+@export var destination_scene : String
 
 func get_prompt():
 	return prompt_message

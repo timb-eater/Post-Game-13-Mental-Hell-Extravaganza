@@ -2,13 +2,15 @@ extends Node3D
 
 
 const place_1 = "res://Scenes/place_1.tscn"
+const place_3 = "res://Scenes/place_3.tscn"
 @onready var dialogue_box = $DialogueHandler/DialogueBox
+@onready var manball_text = $DialogueHandler/RichTextLabel
 var player = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	position_player($Player, $Player/Head)
-	$"Swinging Man/swinging man/AnimationPlayer".play()
+	$"Swinging Man/swinging man/AnimationPlayer".playback_active = true
 
 func position_player(player, playerHead):
 	if Global.destination:
@@ -39,8 +41,13 @@ func _on_area_3d_body_entered(body):
 	body.global_transform.origin = $door1/Marker3D.global_transform.origin
 	$AudioStreamPlayer.play()
 	if body.name == "Manball":
-		$DialogueHandler/RichTextLabel.show()
+		manball_text.show()
 
 
 func _on_door_2_interacted(body):
 	get_tree().change_scene_to_file("res://Scenes/cutscenes/cutscene2.tscn")
+
+
+func _on_door_3_interacted(body):
+	ResourceLoader.load_threaded_request(place_3)
+	Global.goto_door(place_3, "door3")

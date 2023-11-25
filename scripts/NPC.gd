@@ -16,10 +16,12 @@ func _physics_process(delta):
 	
 	if !is_on_floor():
 		velocity.y -= gravity * delta
-		if !audio.playing:
-			audio.play()
+		if audio:
+			if !audio.playing:
+				audio.play()
 	elif is_on_floor():
-		audio.playing = false
+		if audio:
+			audio.playing = false
 	
 	move_and_slide()
 

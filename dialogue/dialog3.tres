@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://cfhamdcptc0a7"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_stm10"]
+
+[resource]
+script = ExtResource("1_stm10")
+starts = {
+"1": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(140, 76),
+"start_id": "1"
+},
+"1_1": {
+"dialogue": "Help me, please... get me out of here... where the fuck am I..? Why me?!",
+"offset": Vector2(360, 80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": "dfvc c"
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": "Bzhel"
+},
+"1_2": {
+"dialogue": "No, the shoes are supposed to go in the bins... no, why??!",
+"offset": Vector2(675.4, 169.95),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(1040, 360),
+"signalValue": "d"
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = ""
