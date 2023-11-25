@@ -7,7 +7,8 @@ script = ExtResource("1_go4xe")
 starts = {
 "1": &"0_1",
 "2": &"0_2",
-"3": &"0_3"
+"3": &"0_3",
+"4": &"0_4"
 }
 nodes = {
 "0_1": {
@@ -24,6 +25,11 @@ nodes = {
 "link": &"1_3",
 "offset": Vector2(-9.66661, 845.841),
 "start_id": "3"
+},
+"0_4": {
+"link": &"1_7",
+"offset": Vector2(-24.8413, 1413.07),
+"start_id": "4"
 },
 "1_1": {
 "dialogue": "Habooch",
@@ -90,7 +96,7 @@ nodes = {
 },
 "size": {
 "x": 300.0,
-"y": 245.0
+"y": 276.0
 },
 "speaker": "Two2"
 },
@@ -106,7 +112,7 @@ nodes = {
 },
 "size": {
 "x": 300.0,
-"y": 245.0
+"y": 276.0
 },
 "speaker": "bamn"
 },
@@ -122,7 +128,60 @@ nodes = {
 },
 "size": {
 "x": 300.0,
-"y": 245.0
+"y": 276.0
+},
+"speaker": ""
+},
+"1_7": {
+"dialogue": "Ну ш так smonche?",
+"offset": Vector2(304, 1444),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": "Xopo"
+},
+1: {
+"condition": {},
+"link": &"1_9",
+"text": "0epm"
+}
+},
+"size": {
+"x": 300.0,
+"y": 307.0
+},
+"speaker": ""
+},
+"1_8": {
+"dialogue": "Xa.. :Э",
+"offset": Vector2(741, 1482),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_9": {
+"dialogue": "Mozohel :д",
+"offset": Vector2(798, 1805),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
 },
 "speaker": ""
 }

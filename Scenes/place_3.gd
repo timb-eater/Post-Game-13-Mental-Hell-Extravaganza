@@ -1,5 +1,6 @@
 extends Node3D
 
+var amount_hit = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,9 +22,12 @@ func _on_npc_interacted(body, id):
 
 func _on_area_3d_body_entered(body):
 	if body.name == "Player":
-		body.global_position = $door3/Marker3D.global_position
+		Global.goto_scene("res://Scenes/place_4.tscn", "door4")
 
 
 func _on_chaser_box_body_entered(body):
 	if body.name == "Player":
 		body.rotate_x(90)
+		amount_hit += 1
+	if amount_hit >= 3:
+		get_tree().change_scene_to_file("res://Scenes/cutscenes/cutscene2.tscn")

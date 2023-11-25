@@ -20,3 +20,12 @@ func _on_door_2_interacted():
 	dialogue_box.start_id = 6
 	if !dialogue_box.running:
 		dialogue_box.start()
+
+
+func _on_dialogue_box_dialogue_signal(value):
+	if value == "place_4":
+		Global.goto_door("res://Scenes/place_4.tscn", "door4")
+
+
+func _on_area_3d_body_entered(body):
+	body.global_position = $go_here.global_position

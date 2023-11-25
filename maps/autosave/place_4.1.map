@@ -1,0 +1,16 @@
+// Game: Qodot
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures/256x256;textures/256x256/Bricks;textures/256x256/Grass;textures/256x256/Roofs;textures/256x256/Tile;textures/256x256/Wood"
+// brush 0
+{
+( -64 784 16 ) ( -64 -64 16 ) ( -64 -64 -16 ) 256x256/Bricks/Bricks_16-256x256 0 0 0 1 1
+( -64 -64 16 ) ( 64 -64 16 ) ( 64 -64 -16 ) 256x256/Bricks/Bricks_16-256x256 0 0 0 1 1
+( 64 -64 -16 ) ( 64 784 -16 ) ( -64 784 -16 ) 256x256/Bricks/Bricks_16-256x256 0 0 0 1 1
+( -64 784 16 ) ( 64 784 16 ) ( 64 -64 16 ) 256x256/Bricks/Bricks_16-256x256 0 0 0 1 1
+( 64 784 -16 ) ( 64 784 16 ) ( -64 784 16 ) 256x256/Bricks/Bricks_16-256x256 0 0 0 1 1
+( 64 -64 16 ) ( 64 784 16 ) ( 64 784 -16 ) 256x256/Bricks/Bricks_16-256x256 0 0 0 1 1
+}
+}

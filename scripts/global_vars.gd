@@ -13,7 +13,6 @@ func goto_door(scene, door):
 	paused = false
 	destination = door
 
-func position_player(player, playerHead, door):
-	if destination:
-		player.global_transform.origin = get_node(door + "/Marker3D").global_transform.origin
-		playerHead.global_rotation = get_node(door + "/Marker3D").global_rotation
+func goto_scene(place, door):
+	ResourceLoader.load_threaded_request(place)
+	goto_door(place, door)

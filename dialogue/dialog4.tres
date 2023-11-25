@@ -1,0 +1,197 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://ce348ih0u5ugl"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_2tqd5"]
+
+[resource]
+script = ExtResource("1_2tqd5")
+starts = {
+"1": &"0_1",
+"2": &"0_2",
+"3": &"0_3",
+"4": &"0_4"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(146, 135),
+"start_id": "1"
+},
+"0_2": {
+"link": &"1_2",
+"offset": Vector2(120, 440),
+"start_id": "2"
+},
+"0_3": {
+"link": &"1_4",
+"offset": Vector2(93.0129, 896.318),
+"start_id": "3"
+},
+"0_4": {
+"link": &"1_7",
+"offset": Vector2(52.0134, 1496.78),
+"start_id": "4"
+},
+"1_1": {
+"dialogue": "hey, smonche? :э",
+"offset": Vector2(480, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": "?Na7"
+},
+1: {
+"condition": {},
+"link": &"3_1",
+"text": "Smonche."
+}
+},
+"size": {
+"x": 300.0,
+"y": 307.0
+},
+"speaker": ""
+},
+"1_2": {
+"dialogue": "Na mestam sluzhat Perkel... Pinzhe gluvka!",
+"offset": Vector2(440, 560),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_3": {
+"dialogue": "Na radsvojum :й",
+"offset": Vector2(860, 220),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_4": {
+"dialogue": "SN
+я приглотил сюды менду явол смse esconerse smolchnikov cogen.",
+"offset": Vector2(440, 880),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": "vashade"
+},
+1: {
+"condition": {},
+"link": "END",
+"text": "dd"
+}
+},
+"size": {
+"x": 300.0,
+"y": 307.0
+},
+"speaker": ""
+},
+"1_5": {
+"dialogue": "Locha.>",
+"offset": Vector2(806.315, 1063.03),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": "mulshadkom"
+},
+1: {
+"condition": {},
+"link": "END",
+"text": "mjuljs"
+}
+},
+"size": {
+"x": 300.0,
+"y": 307.0
+},
+"speaker": ""
+},
+"1_6": {
+"dialogue": "kurvastenye.",
+"offset": Vector2(1202.31, 1351.23),
+"options": {
+0: {
+"condition": {},
+"link": &"3_2",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_7": {
+"dialogue": "what's... hu...... m........",
+"offset": Vector2(418, 1558),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_8": {
+"dialogue": "spm!",
+"offset": Vector2(836, 1615),
+"options": {
+0: {
+"condition": {},
+"link": &"3_3",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(860, 40),
+"signalValue": "smonche"
+},
+"3_2": {
+"link": "END",
+"offset": Vector2(1580, 1540),
+"signalValue": "toilet"
+},
+"3_3": {
+"link": "END",
+"offset": Vector2(1191.97, 2051.26),
+"signalValue": "diabolic_laugh"
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = ""
