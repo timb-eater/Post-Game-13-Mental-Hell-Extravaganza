@@ -1,11 +1,196 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbc11xvwkmvep"]
+[gd_scene load_steps=9 format=3 uid="uid://dbc11xvwkmvep"]
 
+[ext_resource type="Script" path="res://Scenes/cutscenes/credits.gd" id="1_a1bwv"]
 [ext_resource type="FontFile" uid="uid://ch1twcupgh7c6" path="res://textures/NotoSerifDisplay_Condensed-Regular.ttf" id="1_et6tp"]
+[ext_resource type="AudioStream" uid="uid://daw1ca6nc1haw" path="res://sounds/always on my mind.ogg" id="2_7xqe4"]
+
+[sub_resource type="Animation" id="Animation_64buu"]
+length = 112.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.3, 100),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, -1000), Vector2(6, 72.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/quit:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(329, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_yvejn"]
+resource_name = "credits"
+length = 112.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.3, 80.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(6, -1150), Vector2(6, 72.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/quit:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(80.7, 82),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(329, 3), Vector2(148, 17)]
+}
+
+[sub_resource type="Animation" id="Animation_v431d"]
+resource_name = "new_animation"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(39, -200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hk0rw"]
+_data = {
+"RESET": SubResource("Animation_64buu"),
+"credits": SubResource("Animation_yvejn"),
+"new_animation": SubResource("Animation_v431d")
+}
+
+[sub_resource type="Environment" id="Environment_ghfov"]
+background_mode = 1
 
 [node name="credits" type="Node2D"]
+script = ExtResource("1_a1bwv")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7xqe4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(160, 120)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hk0rw")
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ghfov")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 6.0
+offset_top = -1000.0
+offset_right = 312.0
+offset_bottom = 242.0
 theme_override_fonts/normal_font = ExtResource("1_et6tp")
-text = "END"
+bbcode_enabled = true
+text = "and you! Yes you! Yes the player of this game! Thanks for playing this shit game!
+
+[ul]Godoot for having such an ambiguous way to pronounce the name[/ul]
+[ul]The makers of the countless of videos I've watched to  learn to make this shit game[/ul]
+[ul]The people brave enough to ask questions in the forums[/ul]
+[center][b]Special Thanks to:[/b][/center]
+
+
+
+[ul]pend00 - VHS and CRT monitor effect[/ul]
+[ul]MenacingMecha - PSX Style Shaders [/ul]
+[center][b]Shaders[/b][/center]
+
+
+
+
+[ul]
+Qodot
+Nagi - Dialogue Nodes 
+[/ul]
+[center][b]Addons[/b][/center]
+
+
+
+[ul]Simon Robben's Face (in the public domain) [/ul]
+[ul]Paolo Neo - Mountain and Sky panorama[/ul]
+[ul]Scouser - Urban Textures[/ul]
+[ul]Screaming Brain Studios - Tiny Texture Pack [/ul]
+[center][b]Textures[/b][/center]
+
+
+
+
+[ul]elbolilloduro - Paquete de modelos psx 3[/ul]
+[ul]GGBot - PSX Style Cars[/ul]
+[ul]Orange Juice Games - PSX Human[/ul]
+[center][b]Models[/b][/center]
+
+[ul]
+antumdeluge - Evil Laughter Sound
+andersmmg - Toilet Flushing Sound (i dont think i used this)
+Chipmunks on 16 Speed - You Were Always on My Mind
+Kirby Falling Screaming
+Billions Must John
+[/ul]
+[center][b]Music/Sounds[/b][/center]
+
+
+
+
+
+[b][wave amp=50]END[/wave][/b]"
+fit_content = true
+
+[node name="quit" type="Button" parent="CanvasLayer"]
+offset_left = 329.0
+offset_top = 3.0
+offset_right = 524.0
+offset_bottom = 34.0001
+scale = Vector2(0.792457, 1.29013)
+text = "quit smoking"
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 200.0
+offset_top = 135.0
+offset_right = 284.0
+offset_bottom = 166.0
+text = "Svojbistvom"
+
+[connection signal="pressed" from="CanvasLayer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

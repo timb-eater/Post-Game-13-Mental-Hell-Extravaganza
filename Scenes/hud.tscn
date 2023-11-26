@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c287x1yq0o8jg"]
+[gd_scene load_steps=6 format=3 uid="uid://c287x1yq0o8jg"]
 
 [ext_resource type="Script" path="res://Scenes/pause_menu.gd" id="1_exkcq"]
 [ext_resource type="Theme" uid="uid://dc6c1peo4pfyr" path="res://addons/dialogue_nodes/themes/bubbly.theme" id="2_1up1h"]
+[ext_resource type="Texture2D" uid="uid://5xf2o484icv7" path="res://textures/saver.jpg" id="3_65npr"]
 [ext_resource type="Theme" uid="uid://c7sdrp3ltdq24" path="res://addons/dialogue_nodes/themes/pixelart.theme" id="3_esofe"]
 [ext_resource type="Script" path="res://scripts/MasterVolumeSlider.gd" id="4_sfl4t"]
 
@@ -42,6 +43,11 @@ text = "Load"
 [node name="Quit" type="Button" parent="pause_menu/VBoxContainer"]
 layout_mode = 2
 text = "Resume"
+
+[node name="Sprite2D" type="Sprite2D" parent="pause_menu/VBoxContainer"]
+position = Vector2(230, 100)
+scale = Vector2(0.34, 0.324)
+texture = ExtResource("3_65npr")
 
 [node name="Options" type="Control" parent="pause_menu"]
 anchors_preset = 0

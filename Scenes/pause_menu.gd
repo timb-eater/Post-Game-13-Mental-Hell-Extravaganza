@@ -19,6 +19,7 @@ func pause():
 	if Global.paused:
 		get_tree().paused = true
 		pause_menu.show()
+		$pause_menu/VBoxContainer/Sprite2D.hide()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		pause_menu.hide()
@@ -46,8 +47,11 @@ func _on_save_pressed():
 
 func _on_load_pressed():
 	var data = Global.load_data()
-	print(data.scene)
-	Global.load_game(data.scene)
-	
-	Global.destination = ""
-	Global.paused = false
+	if data:
+		print(data.scene)
+		Global.load_game(data.scene)
+		
+		Global.destination = ""
+		Global.paused = false
+	else:
+		$pause_menu/VBoxContainer/Sprite2D.show()

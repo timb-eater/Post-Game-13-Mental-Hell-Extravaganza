@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cgin1wkc3tgor"]
+[gd_scene load_steps=19 format=3 uid="uid://cgin1wkc3tgor"]
 
 [ext_resource type="Shader" path="res://shaders/psx_lit.gdshader" id="1_eqf1p"]
 [ext_resource type="Script" path="res://Scenes/cutscenes/cutscene3.gd" id="1_ktcq3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://hrfcu8niwiwi" path="res://textures/npc.jpeg" id="2_5np5h"]
 [ext_resource type="Shader" path="res://shaders/psx_unlit_transparent.gdshader" id="3_6regr"]
 [ext_resource type="PackedScene" uid="uid://bel3n8k5x1xva" path="res://Scenes/tv.blend" id="5_ayage"]
+[ext_resource type="AudioStream" uid="uid://bntil4bilxrrn" path="res://sounds/fuckpad.ogg" id="6_u7tgu"]
 [ext_resource type="Texture2D" uid="uid://c58gakwuwgr7t" path="res://textures/256x256/Grass/Grass_23-256x256.png" id="7_5icli"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7etjl"]
@@ -495,6 +496,8 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_u7tgu")
+pitch_scale = 0.5
 
 [node name="tv" parent="." instance=ExtResource("5_ayage")]
 transform = Transform3D(-0.998882, 0, -0.0472807, 0, 1, 0, 0.0472807, 0, -0.998882, -0.876291, 0, -3.10887)

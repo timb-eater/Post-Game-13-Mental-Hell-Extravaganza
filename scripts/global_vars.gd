@@ -45,6 +45,7 @@ func save_data(save_position, scene):
 func load_data():
 	var file = FileAccess.open(save_file, FileAccess.READ)
 	if not FileAccess.file_exists(save_file):
+		print("No file!!!")
 		return
 	
 	var parsedResult = JSON.parse_string(file.get_as_text())

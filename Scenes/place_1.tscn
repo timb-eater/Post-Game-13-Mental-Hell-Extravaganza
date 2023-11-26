@@ -777,7 +777,6 @@ enemy = NodePath("../..")
 
 [node name="Screams" type="AudioStreamPlayer3D" parent="NPCs/фоаырв"]
 stream = ExtResource("25_ynf4t")
-unit_size = 35.82
 max_distance = 50.0
 
 [node name="Meechin" type="CharacterBody3D" parent="NPCs"]

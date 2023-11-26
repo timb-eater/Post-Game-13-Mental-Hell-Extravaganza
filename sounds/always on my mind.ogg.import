@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://daw1ca6nc1haw"
+path="res://.godot/imported/always on my mind.ogg-5f48b4bf95e7e0f5b1e672aa3304938f.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/always on my mind.ogg"
+dest_files=["res://.godot/imported/always on my mind.ogg-5f48b4bf95e7e0f5b1e672aa3304938f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

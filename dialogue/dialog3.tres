@@ -5,13 +5,49 @@
 [resource]
 script = ExtResource("1_stm10")
 starts = {
-"1": &"0_1"
+"1": &"0_1",
+"2": &"0_2",
+"3": &"0_3",
+"4": &"0_4",
+"5": &"0_5",
+"6": &"0_6",
+"7": &"0_7"
 }
 nodes = {
 "0_1": {
 "link": &"1_1",
 "offset": Vector2(140, 76),
 "start_id": "1"
+},
+"0_2": {
+"link": &"1_3",
+"offset": Vector2(107.891, 519.766),
+"start_id": "2"
+},
+"0_3": {
+"link": &"1_4",
+"offset": Vector2(40, 880),
+"start_id": "3"
+},
+"0_4": {
+"link": &"1_10",
+"offset": Vector2(-24.4896, 1164.51),
+"start_id": "4"
+},
+"0_5": {
+"link": &"1_13",
+"offset": Vector2(-14.9346, 1946.28),
+"start_id": "5"
+},
+"0_6": {
+"link": &"1_18",
+"offset": Vector2(-73.1645, 2244),
+"start_id": "6"
+},
+"0_7": {
+"link": &"1_19",
+"offset": Vector2(-134.043, 2623.26),
+"start_id": "7"
 },
 "1_1": {
 "dialogue": "Help me, please... get me out of here... where the fuck am I..? Why me?!",
@@ -29,6 +65,171 @@ nodes = {
 },
 "speaker": "Bzhel"
 },
+"1_10": {
+"dialogue": "Xaxa!!! Me companste? Ya dizhen \"Smonche\" ka 50 svetom!",
+"offset": Vector2(220, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_11": {
+"dialogue": "Mushtoa... quen um Smonche?",
+"offset": Vector2(600, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
+"text": "Spemtom."
+},
+1: {
+"condition": {},
+"link": &"3_6",
+"text": "Jaovm!!!"
+}
+},
+"size": {
+"x": 300.0,
+"y": 307.0
+},
+"speaker": ""
+},
+"1_12": {
+"dialogue": "Xak. No me sverom me priduzhat kazhdu svetom!",
+"offset": Vector2(940, 1460),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_13": {
+"dialogue": "Nu cho da mashkom. Vot yemos. Na svojbitsvom.",
+"offset": Vector2(225.727, 1821.82),
+"options": {
+0: {
+"condition": {},
+"link": &"1_14",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_14": {
+"dialogue": "Men frere Perkel me diste ob tabyoum. Te smalopke.",
+"offset": Vector2(660, 1880),
+"options": {
+0: {
+"condition": {},
+"link": &"1_15",
+"text": ""
+}
+},
+"size": {
+"x": 342.074,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_15": {
+"dialogue": "Si teqras betom mire za 4zhdanie, nu i to. Nicho na passom.",
+"offset": Vector2(1100, 1860),
+"options": {
+0: {
+"condition": {},
+"link": &"1_16",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_16": {
+"dialogue": "No esli scapar y svudem sbidanie, me hacte kak yom, i...",
+"offset": Vector2(1480, 1840),
+"options": {
+0: {
+"condition": {},
+"link": &"3_7",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_17": {
+"dialogue": "[wave amp=50.0 freq=5.0 connected=1]{Jumpovom!}[/wave]",
+"offset": Vector2(2140, 1880),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_18": {
+"dialogue": "Party",
+"offset": Vector2(180, 2160),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 245.0
+},
+"speaker": ""
+},
+"1_19": {
+"dialogue": "I made this. This is fuckcore. Not dbcore. Fuckcore.",
+"offset": Vector2(120, 2500),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 245.0
+},
+"speaker": ""
+},
 "1_2": {
 "dialogue": "No, the shoes are supposed to go in the bins... no, why??!",
 "offset": Vector2(675.4, 169.95),
@@ -45,10 +246,152 @@ nodes = {
 },
 "speaker": ""
 },
+"1_3": {
+"dialogue": "Contrary to populace belief, either it will.",
+"offset": Vector2(332.025, 520.299),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_4": {
+"dialogue": "Mashkom... NA SLUZHAT NA SNUCHKIN!",
+"offset": Vector2(320, 820),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_5": {
+"dialogue": "U VA EVO SVOJBITSVOM... TE SVOJBITSVA! NA EVO-",
+"offset": Vector2(735.338, 877.522),
+"options": {
+0: {
+"condition": {},
+"link": &"3_2",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_6": {
+"dialogue": "Nu... to me gludesh?",
+"offset": Vector2(1460, 920),
+"options": {
+0: {
+"condition": {},
+"link": &"3_3",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_7": {
+"dialogue": "Smochnikom... ja damul ko to...",
+"offset": Vector2(2140, 940),
+"options": {
+0: {
+"condition": {},
+"link": &"3_4",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_8": {
+"dialogue": "Te yavromste.",
+"offset": Vector2(2560, 940),
+"options": {
+0: {
+"condition": {},
+"link": &"3_5",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_9": {
+"dialogue": "Pinzhe shlatom...",
+"offset": Vector2(2972.77, 937.973),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
 "3_1": {
 "link": "END",
 "offset": Vector2(1040, 360),
 "signalValue": "d"
+},
+"3_2": {
+"link": &"1_6",
+"offset": Vector2(1120, 1000),
+"signalValue": "look1"
+},
+"3_3": {
+"link": &"1_7",
+"offset": Vector2(1800, 1040),
+"signalValue": "look2"
+},
+"3_4": {
+"link": &"1_8",
+"offset": Vector2(2388.44, 1304.43),
+"signalValue": "look1"
+},
+"3_5": {
+"link": &"1_9",
+"offset": Vector2(2880, 1260),
+"signalValue": "look2"
+},
+"3_6": {
+"link": "END",
+"offset": Vector2(1029, 1251.86),
+"signalValue": "smonche"
+},
+"3_7": {
+"link": &"1_17",
+"offset": Vector2(1800, 1920),
+"signalValue": "sunny"
 }
 }
 variables = {}

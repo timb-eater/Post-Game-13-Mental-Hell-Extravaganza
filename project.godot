@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Narc"
+config/name="Post Game 13 Mental Hell Extravaganza"
 run/main_scene="res://Scenes/cutscenes/cutscene1.tscn"
 config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 0)

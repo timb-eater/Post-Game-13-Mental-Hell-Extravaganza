@@ -27,3 +27,7 @@ func _on_area_3d_body_entered(body):
 
 func _on_mechul_interacted(body):
 	Global.goto_door("res://Scenes/place_1.tscn", "door1")
+
+
+func _on_doorp_interacted(body):
+	Global.goto_door("res://Scenes/place_5.tscn", "doorp")

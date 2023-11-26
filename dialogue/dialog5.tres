@@ -1,0 +1,137 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://ddcty06otqavu"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_kwohd"]
+
+[resource]
+script = ExtResource("1_kwohd")
+starts = {
+"1": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(220, 220),
+"start_id": "1"
+},
+"1_1": {
+"dialogue": "Nu. yesli Palkovnichk. mozu Sparot fedesh.",
+"offset": Vector2(480, 140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_2": {
+"dialogue": "Bcetoro mesta venem na svojbistbo.",
+"offset": Vector2(880, 260),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_3": {
+"dialogue": "Tobo veshchs buno neceto. Na smedvokrin Moxem slidish. Na Spanoja yespan slidish. Mechzu kan svetnom.",
+"offset": Vector2(1260, 280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_4": {
+"dialogue": "U... na mestyt ka mozdu haclo?",
+"offset": Vector2(1689.8, 315.525),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_5": {
+"dialogue": "No svenem slovej puden mon. U nos mos ero acceltar. Mi frero Perkel te mazda, javom? Xa... kak tobo bum. Nu, Pagozhi.",
+"offset": Vector2(2320, 320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_6": {
+"dialogue": "My debom [b]Jump[/b]. Me vidim.",
+"offset": Vector2(2755.09, 308.537),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"1_7": {
+"dialogue": "Pazdanyovkom!",
+"offset": Vector2(3571.34, 228.021),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 276.0
+},
+"speaker": ""
+},
+"3_1": {
+"link": &"1_7",
+"offset": Vector2(3280, 340),
+"signalValue": "sunny"
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = ""
