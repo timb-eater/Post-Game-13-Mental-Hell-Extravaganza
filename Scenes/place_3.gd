@@ -10,6 +10,9 @@ func position_player(player, playerHead):
 	if Global.destination:
 		player.global_transform.origin = get_node(Global.destination + "/Marker3D").global_transform.origin
 		playerHead.global_rotation = get_node(Global.destination + "/Marker3D").global_rotation
+	if Global.is_loading:
+		player.global_transform.origin = Global.str_to_Vector3(Global.load_data().save_position)
+		Global.is_loading = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

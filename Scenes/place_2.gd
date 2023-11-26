@@ -17,7 +17,9 @@ func position_player(player, playerHead):
 	if Global.destination:
 		player.global_transform.origin = get_node(Global.destination + "/Marker3D").global_transform.origin
 		playerHead.global_rotation = get_node(Global.destination + "/Marker3D").global_rotation
-
+	if Global.is_loading:
+		player.global_transform.origin = Global.str_to_Vector3(Global.load_data().save_position)
+		Global.is_loading = false
 
 func _on_teleport_interacted(body):
 	ResourceLoader.load_threaded_request(place_1)
@@ -43,6 +45,8 @@ func _on_area_3d_body_entered(body):
 	$AudioStreamPlayer.play()
 	if body.name == "Manball":
 		manball_text.show()
+		manball_text.append_text("you threw the manball into the well......
+regret yourself? ms")
 
 
 func _on_door_2_interacted(body):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://dwraybti70pkw"]
+[gd_scene load_steps=127 format=3 uid="uid://dwraybti70pkw"]
 
 [ext_resource type="Script" path="res://scripts/dialogueHandler.gd" id="1_8lbg4"]
 [ext_resource type="Texture2D" uid="uid://djainjjab86qa" path="res://textures/Mountain_and_sky_panorama.jpg" id="1_qnr75"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="15_pul8h"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="16_b6m3h"]
 [ext_resource type="PackedScene" uid="uid://cm6e632jxk5md" path="res://Scenes/player.tscn" id="16_br4su"]
+[ext_resource type="Texture2D" uid="uid://5075ppopeeay" path="res://textures/dogegg.jpg" id="16_ee7fn"]
 [ext_resource type="Shader" path="res://shaders/psx_light-volume.gdshader" id="16_nb1tk"]
 [ext_resource type="Shader" path="res://shaders/psx_lit_alpha-scissor.gdshader" id="16_qw4dd"]
 [ext_resource type="Texture2D" uid="uid://deq2pd0sxd8vo" path="res://textures/256x256/Tile/Tile_02-256x256.png" id="16_sd7mv"]
@@ -1092,6 +1093,33 @@ mesh = SubResource("ArrayMesh_4exi6")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_6cl88")
 
+[node name="Colg" type="CharacterBody3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8249, 17.385, 8.45139)
+script = ExtResource("7_oeh53")
+dialog_id = "5"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPCs/Colg"]
+shape = SubResource("CapsuleShape3D_igwuv")
+
+[node name="Timer" type="Timer" parent="NPCs/Colg"]
+wait_time = 2.0
+
+[node name="State Machine" type="Node" parent="NPCs/Colg" node_paths=PackedStringArray("initial_state")]
+script = ExtResource("10_k2c6a")
+initial_state = NodePath("EnemyIdle")
+
+[node name="EnemyIdle" type="Node" parent="NPCs/Colg/State Machine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("11_t1vw2")
+enemy = NodePath("../..")
+
+[node name="Sprite3D" type="Sprite3D" parent="NPCs/Colg"]
+flip_h = true
+pixel_size = 0.005
+billboard = 1
+shaded = true
+double_sided = false
+texture = ExtResource("16_ee7fn")
+
 [node name="Smorg" type="CharacterBody3D" parent="NPCs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4508, 13.9828, 13.0972)
 script = ExtResource("7_oeh53")
@@ -1528,9 +1556,6 @@ max_distance = 50.0
 billboard = 2
 texture = ExtResource("16_sd7mv")
 
-[node name="Player" parent="." instance=ExtResource("16_br4su")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.01164, 0)
-
 [node name="door4" type="Node" parent="."]
 
 [node name="Marker3D" type="Marker3D" parent="door4"]
@@ -1713,10 +1738,13 @@ texture = ExtResource("35_2g18e")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mechul"]
 shape = SubResource("BoxShape3D_tynae")
 
+[node name="Player" parent="." instance=ExtResource("16_br4su")]
+
 [connection signal="dialogue_ended" from="DialogueHandler/DialogueBox" to="DialogueHandler" method="_on_dialogue_box_dialogue_ended"]
 [connection signal="dialogue_signal" from="DialogueHandler/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]
 [connection signal="timeout" from="NPCs/Perkel/Timer" to="NPCs/Perkel" method="_on_timer_timeout" flags=18]
 [connection signal="timeout" from="NPCs/Snem/Timer" to="NPCs/Snem" method="_on_timer_timeout" flags=18]
+[connection signal="timeout" from="NPCs/Colg/Timer" to="NPCs/Colg" method="_on_timer_timeout" flags=18]
 [connection signal="timeout" from="NPCs/Smorg/Timer" to="NPCs/Smorg" method="_on_timer_timeout" flags=18]
 [connection signal="timeout" from="NPCs/Bычелkz/Timer" to="NPCs/Bычелkz" method="_on_timer_timeout" flags=18]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -8,7 +8,8 @@ starts = {
 "1": &"0_1",
 "2": &"0_2",
 "3": &"0_3",
-"4": &"0_4"
+"4": &"0_4",
+"5": &"0_5"
 }
 nodes = {
 "0_1": {
@@ -31,6 +32,11 @@ nodes = {
 "offset": Vector2(52.0134, 1496.78),
 "start_id": "4"
 },
+"0_5": {
+"link": &"1_9",
+"offset": Vector2(-97.6129, 1968.45),
+"start_id": "5"
+},
 "1_1": {
 "dialogue": "hey, smonche? :э",
 "offset": Vector2(480, 0),
@@ -49,6 +55,22 @@ nodes = {
 "size": {
 "x": 300.0,
 "y": 307.0
+},
+"speaker": ""
+},
+"1_10": {
+"dialogue": "I am a time traveller from the future. Unfortunately, my species here do not have the same langauge capabilities as me so I'll refrain from speaking their language out of courtesy.",
+"offset": Vector2(800, 2180),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": {
+"x": 300.0,
+"y": 245.0
 },
 "speaker": ""
 },
@@ -172,6 +194,27 @@ nodes = {
 "size": {
 "x": 300.0,
 "y": 276.0
+},
+"speaker": ""
+},
+"1_9": {
+"dialogue": "Good evening.",
+"offset": Vector2(240, 1960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": "Myshlovkin??!"
+},
+1: {
+"condition": {},
+"link": &"1_10",
+"text": "Ludom..."
+}
+},
+"size": {
+"x": 300.0,
+"y": 307.0
 },
 "speaker": ""
 },

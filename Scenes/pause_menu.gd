@@ -1,11 +1,14 @@
 extends Control
 
 @onready var pause_menu = $pause_menu
+@onready var player = $"../../.."
 
 func _ready():
 	$pause_menu/Options/Sensitivity.text = "sensitivity: " + str(Global.sensitivity)
 	$pause_menu/Options/HSlider.value = Global.sensitivity
 	$pause_menu.hide()
+	if !Global.paused:
+		get_tree().paused = false
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("pause") and Global.can_pause:
@@ -14,8 +17,8 @@ func _unhandled_input(event):
 func pause():
 	Global.paused = !Global.paused
 	if Global.paused:
-		pause_menu.show()
 		get_tree().paused = true
+		pause_menu.show()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		pause_menu.hide()
@@ -37,4 +40,14 @@ func _on_h_slider_value_changed(value):
 
 
 func _on_save_pressed():
-	Global.save_data($"../../..".global_position, get_tree().current_scene.scene_file_path)
+	Global.save_data(player.global_position, get_tree().current_scene.scene_file_path)
+	Global.destination = ""
+
+
+func _on_load_pressed():
+	var data = Global.load_data()
+	print(data.scene)
+	Global.load_game(data.scene)
+	
+	Global.destination = ""
+	Global.paused = false

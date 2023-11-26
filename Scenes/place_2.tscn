@@ -1246,7 +1246,7 @@ parameters/conditions/idle = true
 parameters/conditions/walk = false
 
 [node name="Perkel" type="CharacterBody3D" parent="NPCs"]
-transform = Transform3D(0.14781, 0, 0.989016, 0, 1, 0, -0.989016, 0, 0.14781, 11.3171, 19.285, 9.64377)
+transform = Transform3D(0.14781, 0, 0.989016, 0, 1, 0, -0.989016, 0, 0.14781, 11.3171, 18.0796, 9.64377)
 script = ExtResource("18_ltjb7")
 dialog_id = "4"
 

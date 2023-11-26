@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh7vws3msltp3"
-path.s3tc="res://.godot/imported/Bricks_09-256x256.png-f9d5ef318f05771935d8acc9f663bc1c.s3tc.ctex"
+uid="uid://5075ppopeeay"
+path.s3tc="res://.godot/imported/dogegg.jpg-c69c549d83b8541546731dcd7f90c797.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/256x256/Bricks/Bricks_09-256x256.png"
-dest_files=["res://.godot/imported/Bricks_09-256x256.png-f9d5ef318f05771935d8acc9f663bc1c.s3tc.ctex"]
+source_file="res://textures/dogegg.jpg"
+dest_files=["res://.godot/imported/dogegg.jpg-c69c549d83b8541546731dcd7f90c797.s3tc.ctex"]
 
 [params]
 

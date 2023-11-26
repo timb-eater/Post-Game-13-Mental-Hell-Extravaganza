@@ -108,5 +108,6 @@ bus_name = "Music"
 
 [connection signal="pressed" from="pause_menu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="pause_menu/VBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="pause_menu/VBoxContainer/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="pause_menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="value_changed" from="pause_menu/Options/HSlider" to="." method="_on_h_slider_value_changed"]
