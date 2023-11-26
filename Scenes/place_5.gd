@@ -27,11 +27,12 @@ func _on_dialogue_box_dialogue_signal(value):
 		$Player/Head.look_at($NPCs/Snem.global_transform.origin)
 
 func _on_area_3d_body_entered(body):
+	print("entered")
+	body.global_position = Vector3(body.global_position.x, 100, body.global_position.z)
 	if body.name == "Player":
 		jump_count += 1
 	if jump_count >= 10:
 		get_tree().change_scene_to_file("res://Scenes/cutscenes/credits.tscn")
-	body.global_position = Vector3(body.global_position.x, 100, body.global_position.z)
 
 
 func _on_area_3d_2_body_entered(body):
