@@ -56,3 +56,8 @@ func _on_door_2_interacted(body):
 func _on_door_3_interacted(body):
 	ResourceLoader.load_threaded_request(place_3)
 	Global.goto_door(place_3, "door3")
+
+
+func _on_dialogue_box_dialogue_signal(value):
+	if value == "place_4":
+		Global.goto_door("res://Scenes/place_4.tscn", "door4")

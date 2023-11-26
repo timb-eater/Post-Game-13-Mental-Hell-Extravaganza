@@ -2421,6 +2421,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47661, 12.9374, 2.62907)
 
 [connection signal="timeout" from="NPCs/Splim/Timer" to="NPCs/Splim" method="_on_timer_timeout" flags=18]
 [connection signal="dialogue_ended" from="DialogueHandler/DialogueBox" to="DialogueHandler" method="_on_dialogue_box_dialogue_ended"]
+[connection signal="dialogue_signal" from="DialogueHandler/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]
 [connection signal="interacted" from="door1" to="." method="_on_teleport_interacted"]
 [connection signal="interacted" from="tv" to="." method="_on_tv_interacted"]
 [connection signal="interacted" from="Swinging Man" to="." method="_on_interactable_interacted"]

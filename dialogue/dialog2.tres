@@ -154,18 +154,24 @@ nodes = {
 "speaker": ""
 },
 "1_8": {
-"dialogue": "Xa.. :Э",
-"offset": Vector2(741, 1482),
+"dialogue": "Xa.. :Э
+Xaxesh id v atrach?",
+"offset": Vector2(760, 1420),
 "options": {
 0: {
 "condition": {},
+"link": &"3_1",
+"text": "Javno"
+},
+1: {
+"condition": {},
 "link": "END",
-"text": ""
+"text": "Sm"
 }
 },
 "size": {
 "x": 300.0,
-"y": 276.0
+"y": 307.0
 },
 "speaker": ""
 },
@@ -184,6 +190,11 @@ nodes = {
 "y": 276.0
 },
 "speaker": ""
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(1279.5, 1546.05),
+"signalValue": "place_4"
 }
 }
 variables = {}
