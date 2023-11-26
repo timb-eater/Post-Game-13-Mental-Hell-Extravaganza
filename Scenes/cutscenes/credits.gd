@@ -8,6 +8,11 @@ func _ready():
 	Global.destination = ""
 	
 
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		$AnimationPlayer.speed_scale = 10
+	else:
+		$AnimationPlayer.speed_scale = 1
 
 func _on_button_pressed():
 	$CanvasLayer/RichTextLabel.show()
